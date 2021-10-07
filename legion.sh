@@ -34,13 +34,3 @@ repo init --depth=1 -u https://github.com/Project-LegionOS/manifest.git -b 11
 #sync repo
 
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
-
-#clone trees
-
-git clone https://github.com/AISHIK999/android_device_xiaomi_santoni.git -b eleven device/xiaomi/santoni
-git clone https://github.com/Jabiyeff-Project/kernel-santoni.git -b 11.0 kernel/xiaomi/msm8937
-git clone https://github.com/Jabiyeff-Project/vendor-santoni.git -b 11.0 vendor/xiaomi
-
-#nuke telephony
-
-sed -i '/qti-telephony-common.jar/d' vendor/xiaomi/santoni/santoni-vendor.mk
